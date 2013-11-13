@@ -41,3 +41,5 @@ ln -sb dotfiles/.bashrc .
 ln -sb dotfiles/.bashrc_custom .
 ln -sf dotfiles/.emacs.d .
 
+## Install Ruby RVM system
+\curl -L https://get.rvm.io | bash -s stable
