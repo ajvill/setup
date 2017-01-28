@@ -5,12 +5,12 @@
 # Install nvm: node-version manager
 # https://github.com/creationix/nvm
 sudo apt-get install -y git-core
-curl https://raw.github.com/creationix/nvm/master/install.sh | sh
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.0/install.sh | bash
 
 # Load nvm and install latest production node
 source $HOME/.nvm/nvm.sh
-nvm install v0.20.0
-nvm use v0.20.0
+nvm install v0.33.0
+nvm use v0.33.0
 
 # Install jshint to allow checking of JS code within emacs
 # http://jshint.com/
@@ -20,6 +20,7 @@ npm install -g jshint
 # See: http://nodejs.org/api/repl.html#repl_repl
 sudo apt-get install -y rlwrap
 
+## NOT USING EMACS
 # Install emacs24
 # https://launchpad.net/~cassou/+archive/emacs
 #sudo apt-add-repository -y ppa:cassou/emacs
@@ -31,9 +32,11 @@ cd $HOME
 if [ -d ./dotfiles/ ]; then
     mv dotfiles dotfiles.old
 fi
+
 if [ -d .emacs.d/ ]; then
     mv .emacs.d .emacs.d~
 fi
+
 git clone https://github.com/ajvill/dotfiles.git
 ln -sb dotfiles/.screenrc .
 ln -sb dotfiles/.bash_profile .
